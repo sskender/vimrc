@@ -163,6 +163,11 @@ set smartindent
 " Makes popup menu smaller
 set pumheight=10
 
+" Code folding
+set foldenable
+set foldmethod=indent
+nnoremap <space> za
+
 " Add a bit extra margin to the left
 set foldcolumn=1
 
