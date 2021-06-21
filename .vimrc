@@ -127,6 +127,9 @@ set relativenumber
 " Show current line
 set number
 
+" Highlight line with cursor
+set cursorline
+
 " Ignore case when searching
 set ignorecase
 
@@ -170,6 +173,9 @@ nnoremap <space> za
 
 " Add a bit extra margin to the left
 set foldcolumn=1
+
+" Always show sign column
+set signcolumn=yes
 
 " Always show tabs
 set showtabline=2
