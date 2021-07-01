@@ -53,6 +53,7 @@ au FocusGained,BufEnter * checktime
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
+set fileencoding=utf-8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -169,6 +170,7 @@ set pumheight=10
 " Code folding
 set foldenable
 set foldmethod=indent
+set foldlevelstart=10
 nnoremap <space> za
 
 " Add a bit extra margin to the left
@@ -180,7 +182,7 @@ set signcolumn=yes
 " Always show tabs
 set showtabline=2
 
-" Update faster (e.g. git changes)
+" Update faster (e.g. track git changes)
 set updatetime=100
 
 
