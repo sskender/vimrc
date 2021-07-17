@@ -18,6 +18,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'joshdick/onedark.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'sheerun/vim-polyglot'
@@ -263,5 +265,17 @@ set background=light
 let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+" fzf.vim
+nnoremap <leader><leader>f :Files<CR>
+nnoremap <leader><leader>g :GFiles<CR>
+nnoremap <leader><leader>r :Rg<CR>
+nnoremap <leader><leader>b :Buffers<CR>
+nnoremap <leader><leader>m :Marks<CR>
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
 
 let g:rainbow_active = 1
