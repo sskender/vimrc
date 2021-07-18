@@ -266,7 +266,12 @@ let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-" fzf.vim
+" PLUGIN: fzf.vim
+"
+" Respect .gitignore
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+
+" Key bindings
 nnoremap <leader><leader>f :Files<CR>
 nnoremap <leader><leader>g :GFiles<CR>
 nnoremap <leader><leader>r :Rg<CR>
