@@ -17,6 +17,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'ciaranm/detectindent'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -261,6 +262,15 @@ noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 colorscheme onedark
 set background=light
+
+" PLUGIN: detectindent
+"
+" Preferred settings
+let g:detectindent_preferred_expandtab = 1
+let g:detectindent_preferred_indent = 4
+
+" Run on startup
+autocmd BufReadPost * :DetectIndent
 
 let g:airline_theme = 'onedark'
 let g:airline#extensions#tabline#enabled = 1
