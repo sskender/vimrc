@@ -67,12 +67,12 @@ set nowb
 set noswapfile
 set nowritebackup
 
-" CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
+" CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 " Revert with ":iunmap <C-U>".
 inoremap <C-U> <C-G>u<C-U>
 
-" In many terminal emulators the mouse works just fine.  By enabling it you
+" In many terminal emulators the mouse works just fine. By enabling it you
 " can position the cursor, Visually select and scroll with the mouse.
 " Only xterm can grab the mouse events when using the shift key, for other
 " terminals use ":", select text and press Esc.
@@ -92,7 +92,7 @@ set tm=500
 
 " Properly disable sound on errors on MacVim
 if has("gui_macvim")
-    autocmd GUIEnter * set vb t_vb=
+  autocmd GUIEnter * set vb t_vb=
 endif
 
 " Copy paste between vim and everything else
@@ -177,7 +177,7 @@ set foldlevelstart=10
 nnoremap <space> za
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+" set foldcolumn=1
 
 " Always show sign column
 set signcolumn=yes
@@ -206,8 +206,8 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Sane split commands
-noremap <Leader>sh :<C-u>split<CR>
-noremap <Leader>sv :<C-u>vsplit<CR>
+noremap <leader>sh :<C-u>split<CR>
+noremap <leader>sv :<C-u>vsplit<CR>
 
 " Buffers shortcuts
 noremap <leader>z :bp<CR>
@@ -246,20 +246,28 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
-
 " Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled
-noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+" noremap <leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
+
+" Quit files
+noremap <leader>q :q<cr>
+
+" Visual mode pressing // searches for the current selection
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" Toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
 
 
 "
 " PLUGIN SETTINGS
 "
 
+" PLUGIN: onedark
+"
 colorscheme onedark
 set background=light
 
@@ -279,7 +287,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " PLUGIN: fzf.vim
 "
 " Respect .gitignore
-let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git/"'
 
 " Key bindings
 nnoremap <leader><leader>f :Files<CR>
