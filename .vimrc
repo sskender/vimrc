@@ -268,12 +268,8 @@ map <leader>ss :setlocal spell!<cr>
 " PLUGIN SETTINGS
 "
 
-" PLUGIN: onedark
-"
-colorscheme onedark
-set background=light
 
-" PLUGIN: detectindent
+" PLUGIN: ciaranm/detectindent
 "
 " Preferred settings
 let g:detectindent_preferred_expandtab = 1
@@ -282,11 +278,14 @@ let g:detectindent_preferred_indent = 4
 " Run on startup
 autocmd BufReadPost * :DetectIndent
 
-let g:airline_theme = 'onedark'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-" PLUGIN: fzf.vim
+" PLUGIN: joshdick/onedark.vim
+"
+colorscheme onedark
+set background=light
+
+
+" PLUGIN: junegunn/fzf.vim
 "
 " Respect .gitignore
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git/"'
@@ -303,4 +302,14 @@ command! -bang -nargs=* Rg
   \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
+
+" PLUGIN: luochen1990/rainbow
+"
 let g:rainbow_active = 1
+
+
+" PLUGIN: vim-airline/vim-airline
+"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline_theme = 'onedark'
