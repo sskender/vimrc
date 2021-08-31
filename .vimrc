@@ -23,6 +23,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
+Plug 'pbrisbin/vim-mkdir'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -247,6 +248,7 @@ if has("mac") || has("macunix")
 endif
 
 " Opens an edit command with the path of the currently edited file filled in
+" Use with 'pbrisbin/vim-mkdir' for extra convenience
 noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled
