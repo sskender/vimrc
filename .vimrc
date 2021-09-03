@@ -261,7 +261,7 @@ noremap <leader>q :q<cr>
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+map <leader><leader>s :setlocal spell!<cr>
 
 
 "
