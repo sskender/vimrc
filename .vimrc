@@ -206,20 +206,26 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
+" Quit files
+noremap <C-q> :q<CR>
+
 " Sane split commands
 noremap <leader>sh :<C-u>split<CR>
 noremap <leader>sv :<C-u>vsplit<CR>
 
 " Buffers shortcuts
-noremap <leader>z :bp<CR>
-noremap <leader>x :bn<CR>
-noremap <leader>c :bd<CR>
+noremap <leader>q :bd<CR>
+noremap <leader>w :bp<CR>
+noremap <leader>e :bn<CR>
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
 " Double escape to clear search
 nnoremap <esc><esc> :noh<return><esc>
+
+" Visual mode pressing // searches for the current selection
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
@@ -235,10 +241,10 @@ autocmd BufReadPost *
   \ | endif
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nmap <M-j> mz:m+<CR>`z
+nmap <M-k> mz:m-2<CR>`z
+vmap <M-j> :m'>+<CR>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<CR>`>my`<mzgv`yo`z
 
 if has("mac") || has("macunix")
   nmap <D-j> <M-j>
@@ -253,12 +259,6 @@ noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " Opens a tab edit command with the path of the currently edited file filled
 " noremap <leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" Quit files
-noremap <leader>q :q<cr>
-
-" Visual mode pressing // searches for the current selection
-vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Toggle and untoggle spell checking
 map <leader><leader>s :setlocal spell!<cr>
