@@ -214,9 +214,9 @@ noremap <leader>sh :<C-u>split<CR>
 noremap <leader>sv :<C-u>vsplit<CR>
 
 " Buffers shortcuts
-noremap <leader>q :bd<CR>
-noremap <leader>w :bp<CR>
-noremap <leader>e :bn<CR>
+noremap <leader>z :bp<CR>
+noremap <leader>x :bn<CR>
+noremap <leader>c :bd<CR>
 
 " Remap VIM 0 to first non-blank character
 map 0 ^
