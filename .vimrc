@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/detectindent'
+Plug 'dense-analysis/ale'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -274,6 +275,14 @@ let g:detectindent_preferred_indent = 4
 
 " Run on startup
 autocmd BufReadPost * :DetectIndent
+
+
+" PLUGIN: dense-analysis/ale
+"
+let g:ale_completion_enabled = 0
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_set_highlights = 0
 
 
 " PLUGIN: joshdick/onedark.vim
