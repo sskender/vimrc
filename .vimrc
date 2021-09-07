@@ -30,6 +30,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -394,3 +395,18 @@ command! -bang -nargs=* Rg
 " PLUGIN: luochen1990/rainbow
 "
 let g:rainbow_active = 1
+
+
+" PLUGIN: ycm-core/YouCompleteMe
+"
+" Options
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Commands
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <leader>gt :YcmCompleter GetType<CR>
+nnoremap <leader>rr :YcmCompleter RefactorRename 
