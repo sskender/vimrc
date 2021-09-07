@@ -258,7 +258,7 @@ noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " noremap <leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
 
 " Toggle and untoggle spell checking
-map <leader><leader>s :setlocal spell!<cr>
+map <leader><leader>s :setlocal spell!<CR>
 
 
 "
