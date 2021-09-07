@@ -29,8 +29,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -280,9 +278,89 @@ autocmd BufReadPost * :DetectIndent
 
 " PLUGIN: joshdick/onedark.vim
 "
+" Colorscheme
 colorscheme onedark
 set background=light
 
+" Statusline
+set laststatus=2
+set statusline=\ 
+set statusline+=%1*
+set statusline+=\ 
+set statusline+=%{StatuslineMode()}
+set statusline+=\ 
+set statusline+=%2*
+set statusline+=\ 
+set statusline+=%r
+set statusline+=%F
+set statusline+=\ 
+set statusline+=%m
+set statusline+=%3*
+set statusline+=\ 
+set statusline+=%{StatuslineGit()}
+set statusline+=%=
+set statusline+=%4*
+set statusline+=%y
+set statusline+=\ 
+set statusline+=\|
+set statusline+=\ 
+set statusline+=%{&ff}
+set statusline+=\ 
+set statusline+=%{strlen(&fenc)?&fenc:'none'}
+set statusline+=\ 
+set statusline+=\|
+set statusline+=\ 
+set statusline+=%4*
+set statusline+=b\ <
+set statusline+=%n
+set statusline+=>
+set statusline+=\ 
+set statusline+=w\ < 
+set statusline+=%{winnr()}
+set statusline+=>
+set statusline+=\ 
+set statusline+=\|
+set statusline+=%2*
+set statusline+=\ ln\ 
+set statusline+=%l
+set statusline+=:
+set statusline+=%c
+set statusline+=/
+set statusline+=%L
+set statusline+=\ 
+set statusline+=%P
+set statusline+=\ 
+
+hi User1 ctermbg=39 ctermfg=235 guibg=#61afef guifg=#282c34
+hi User2 ctermbg=235 ctermfg=145 guibg=#282c34 guifg=#abb2bF
+hi User3 ctermbg=235 ctermfg=114 guibg=#282c34 guifg=#98c379
+hi User4 ctermbg=235 ctermfg=59 guibg=#282c34 guifg=#5c6370
+
+function! StatuslineMode()
+  let l:mode = mode()
+  if l:mode==#"n"
+    return "NORMAL"
+  elseif l:mode==?"v"
+    return "VISUAL"
+  elseif l:mode==#"i"
+    return "INSERT"
+  elseif l:mode==#"R"
+    return "REPLACE"
+  elseif l:mode==?"s"
+    return "SELECT"
+  elseif l:mode==#"t"
+    return "TERMINAL"
+  elseif l:mode==#"c"
+    return "COMMAND"
+  elseif l:mode==#"!"
+    return "SHELL"
+  endif
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+  return strlen(l:branchname) > 0 ? l:branchname : ''
+endfunction
 
 " PLUGIN: junegunn/fzf.vim
 "
@@ -305,10 +383,3 @@ command! -bang -nargs=* Rg
 " PLUGIN: luochen1990/rainbow
 "
 let g:rainbow_active = 1
-
-
-" PLUGIN: vim-airline/vim-airline
-"
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_theme = 'onedark'
