@@ -294,7 +294,8 @@ set background=light
 
 " Statusline
 set laststatus=2
-set statusline=\ 
+set statusline=%2*
+set statusline+=\ 
 set statusline+=%1*
 set statusline+=\ 
 set statusline+=%{StatuslineMode()}
