@@ -19,11 +19,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/detectindent'
 Plug 'dense-analysis/ale'
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
+Plug 'morhetz/gruvbox'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
@@ -286,11 +286,14 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_set_highlights = 0
 
 
-" PLUGIN: joshdick/onedark.vim
+" PLUGIN: morhetz/gruvbox
 "
 " Colorscheme
-colorscheme onedark
-set background=light
+let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_improved_strings=0
+let g:gruvbox_sign_column='bg0'
+set background=dark
+colorscheme gruvbox
 
 " Statusline
 set laststatus=2
@@ -343,10 +346,10 @@ set statusline+=\
 set statusline+=%P
 set statusline+=\ 
 
-hi User1 ctermbg=39 ctermfg=235 guibg=#61afef guifg=#282c34
-hi User2 ctermbg=235 ctermfg=145 guibg=#282c34 guifg=#abb2bF
-hi User3 ctermbg=235 ctermfg=114 guibg=#282c34 guifg=#98c379
-hi User4 ctermbg=235 ctermfg=59 guibg=#282c34 guifg=#5c6370
+hi User1 ctermbg=109 ctermfg=235 guibg=#83a598 guifg=#282828
+hi User2 ctermbg=235 ctermfg=246 guibg=#282828 guifg=#a89984
+hi User3 ctermbg=235 ctermfg=108 guibg=#282828 guifg=#8ec07c
+hi User4 ctermbg=235 ctermfg=239 guibg=#282828 guifg=#504945
 
 function! StatuslineMode()
   let l:mode = mode()
