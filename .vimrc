@@ -84,6 +84,11 @@ if has('mouse')
   endif
 endif
 
+" True color support
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
