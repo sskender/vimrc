@@ -312,7 +312,7 @@ set statusline+=\
 set statusline+=%m
 set statusline+=%3*
 set statusline+=\ 
-set statusline+=%{StatuslineGit()}
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%=
 set statusline+=%4*
 set statusline+=%y
@@ -370,11 +370,6 @@ function! StatuslineMode()
   elseif l:mode==#"!"
     return "SHELL"
   endif
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-  return strlen(l:branchname) > 0 ? l:branchname : ''
 endfunction
 
 
