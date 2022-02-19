@@ -301,12 +301,34 @@ set background=dark
 colorscheme gruvbox
 
 " Statusline
+let g:currentmode={
+  \ 'n'  : 'Normal',
+  \ 'no' : 'Normal·Operator Pending',
+  \ 'v'  : 'Visual',
+  \ 'V'  : 'V·Line',
+  \ '^V' : 'V·Block',
+  \ 's'  : 'Select',
+  \ 'S'  : 'S·Line',
+  \ '^S' : 'S·Block',
+  \ 'i'  : 'Insert',
+  \ 'R'  : 'Replace',
+  \ 'Rv' : 'V·Replace',
+  \ 'c'  : 'Command',
+  \ 'cv' : 'Vim Ex',
+  \ 'ce' : 'Ex',
+  \ 'r'  : 'Prompt',
+  \ 'rm' : 'More',
+  \ 'r?' : 'Confirm',
+  \ '!'  : 'Shell',
+  \ 't'  : 'Terminal'
+  \ }
+
 set laststatus=2
 set statusline=%2*
 set statusline+=\ 
 set statusline+=%1*
 set statusline+=\ 
-set statusline+=%{StatuslineMode()}
+set statusline+=%{toupper(g:currentmode[mode()])}
 set statusline+=\ 
 set statusline+=%2*
 set statusline+=\ 
@@ -355,27 +377,6 @@ hi User1 ctermbg=109 ctermfg=235 guibg=#83a598 guifg=#282828
 hi User2 ctermbg=235 ctermfg=246 guibg=#282828 guifg=#a89984
 hi User3 ctermbg=235 ctermfg=108 guibg=#282828 guifg=#8ec07c
 hi User4 ctermbg=235 ctermfg=239 guibg=#282828 guifg=#504945
-
-function! StatuslineMode()
-  let l:mode = mode()
-  if l:mode==#"n"
-    return "NORMAL"
-  elseif l:mode==?"v"
-    return "VISUAL"
-  elseif l:mode==#"i"
-    return "INSERT"
-  elseif l:mode==#"R"
-    return "REPLACE"
-  elseif l:mode==?"s"
-    return "SELECT"
-  elseif l:mode==#"t"
-    return "TERMINAL"
-  elseif l:mode==#"c"
-    return "COMMAND"
-  elseif l:mode==#"!"
-    return "SHELL"
-  endif
-endfunction
 
 
 " PLUGIN: junegunn/fzf.vim
