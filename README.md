@@ -17,3 +17,9 @@ cd ~/Documents/vimrc
 git pull
 ```
 
+### Docker
+
+```bash
+docker pull sskender/vimrc
+docker run -it sskender/vimrc
+```
