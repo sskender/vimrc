@@ -19,6 +19,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/detectindent'
 Plug 'dense-analysis/ale'
+Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
@@ -353,13 +354,8 @@ set statusline+=\
 set statusline+=\|
 set statusline+=\ 
 set statusline+=%4*
-set statusline+=b\ <
+set statusline+=b\ 
 set statusline+=%n
-set statusline+=>
-set statusline+=\ 
-set statusline+=w\ < 
-set statusline+=%{winnr()}
-set statusline+=>
 set statusline+=\ 
 set statusline+=\|
 set statusline+=%2*
