@@ -393,6 +393,11 @@ command! -bang -nargs=* Rg
 let g:rainbow_active = 1
 
 
+" PLUGIN: preservim/tagbar
+"
+nmap <F8> :TagbarToggle<CR>
+
+
 " PLUGIN: ycm-core/YouCompleteMe
 "
 " Options
