@@ -11,6 +11,9 @@ RUN apt-get install build-essential cmake vim-nox python3-dev git vim wget curl 
 RUN apt-get install mono-complete golang nodejs default-jdk npm -y
 RUN apt-get install fzf ripgrep -y
 RUN apt-get install universal-ctags -y
+RUN apt autoremove -y \
+    && apt clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ARG GROUP_ID=1000
 ARG USER_ID=1000
