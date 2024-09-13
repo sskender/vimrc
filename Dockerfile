@@ -26,7 +26,7 @@ USER ${USER_NAME}
 WORKDIR /home/${USER_NAME}
 
 RUN git clone https://github.com/sskender/vimrc.git
-RUN ln -s /home/${USER_NAME}/vimrc/.vimrc /home/${USER_NAME}/.vimrc
+RUN ln -s /home/${USER_NAME}/vimrc/vimrc /home/${USER_NAME}/.vimrc
 
 WORKDIR /home/${USER_NAME}/.vim/plugged/
 RUN git clone https://github.com/ycm-core/YouCompleteMe.git
