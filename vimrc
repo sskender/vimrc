@@ -19,20 +19,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'ciaranm/detectindent'
 Plug 'dense-analysis/ale'
-Plug 'honza/vim-snippets'
+Plug 'easymotion/vim-easymotion'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'morhetz/gruvbox'
-Plug 'pbrisbin/vim-mkdir'
 Plug 'preservim/tagbar'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -396,18 +394,3 @@ let g:rainbow_active = 1
 " PLUGIN: preservim/tagbar
 "
 nmap <F8> :TagbarToggle<CR>
-
-
-" PLUGIN: ycm-core/YouCompleteMe
-"
-" Options
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" Commands
-nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <leader>gr :YcmCompleter GoToReferences<CR>
-nnoremap <leader>gt :YcmCompleter GetType<CR>
-nnoremap <leader>rr :YcmCompleter RefactorRename 
