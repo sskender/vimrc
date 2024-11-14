@@ -1,14 +1,10 @@
 name: vimrc CI
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 jobs:
-
   build-docker:
-
     runs-on: ubuntu-latest
 
     steps:
