@@ -11,7 +11,7 @@ return {
     { "HiPhish/rainbow-delimiters.nvim" },
 
 
-    { "ellisonleao/gruvbox.nvim" },
+    { "morhetz/gruvbox" },
 
     {
         "nvim-lualine/lualine.nvim",

@@ -30,11 +30,9 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.opt.termguicolors = true
-vim.opt.background = "dark"
-
 vim.opt.cursorline = true
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 vim.opt.laststatus = 3
 
-vim.cmd("colorscheme gruvbox")
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
