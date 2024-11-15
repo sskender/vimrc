@@ -8,7 +8,7 @@ vim.keymap.set("n", "<C-l>", "<C-W>l", { silent = true })
 vim.keymap.set("n", "0", "^")
 
 -- hackers use hjkl
-vim.keymap.set({ "n", "i", "v" }, "<Up>", "<NOP>", { silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<Down>", "<NOP>", { silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<Left>", "<NOP>", { silent = true })
-vim.keymap.set({ "n", "i", "v" }, "<Right>", "<NOP>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<Up>", "<NOP>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<Down>", "<NOP>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<Left>", "<NOP>", { silent = true })
+vim.keymap.set({ "n", "v" }, "<Right>", "<NOP>", { silent = true })
