@@ -37,3 +37,7 @@ vim.opt.laststatus = 3
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
+
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
