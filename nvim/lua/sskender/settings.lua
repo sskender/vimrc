@@ -30,6 +30,7 @@ vim.opt.sidescrolloff = 8
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
+vim.opt.guicursor = "n-v-c-i:block"
 vim.opt.cursorline = true
 vim.opt.showtabline = 0
 vim.opt.laststatus = 3
