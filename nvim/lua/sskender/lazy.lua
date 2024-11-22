@@ -17,7 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
-        { import = "plugins" },
+        { import = "sskender.plugins" },
     },
     install = {
         missing = true,
@@ -29,5 +29,4 @@ require("lazy").setup({
     rocks = {
         enabled = false
     }
-
 })
