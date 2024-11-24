@@ -21,7 +21,7 @@ vim.opt.smartcase = true
 vim.opt.incsearch = true
 vim.opt.hlsearch = false
 
-vim.opt.updatetime = 50
+vim.opt.updatetime = 100
 vim.opt.timeoutlen = 500
 
 vim.opt.wrap = false
