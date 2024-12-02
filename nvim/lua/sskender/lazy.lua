@@ -24,7 +24,7 @@ require("lazy").setup({
         colorscheme = { "gruvbox" },
     },
     checker = {
-        enabled = true
+        enabled = false
     },
     rocks = {
         enabled = false
