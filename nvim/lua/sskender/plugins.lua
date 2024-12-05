@@ -10,8 +10,7 @@ return {
 
     { "HiPhish/rainbow-delimiters.nvim" },
 
-
-    { "morhetz/gruvbox" },
+    { "ellisonleao/gruvbox.nvim" },
 
     {
         "nvim-lualine/lualine.nvim",
@@ -22,7 +21,7 @@ return {
     -- Git
 
     { "tpope/vim-fugitive" },
-    { "lewis6991/gitsigns.nvim" },
+    { "airblade/vim-gitgutter" },
 
 
     -- LSP

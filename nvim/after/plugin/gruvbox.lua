@@ -1,6 +1,9 @@
-vim.g.gruvbox_contrast_dark = "medium"
-vim.g.gruvbox_improved_strings = 0
-vim.g.gruvbox_sign_column = "bg0"
+require("gruvbox").setup({
+    overrides = {
+        SignColumn = { bg = "#282828" }
+    }
+})
+
 
 vim.opt.background = "dark"
 

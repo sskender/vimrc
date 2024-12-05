@@ -4,8 +4,8 @@ vim.keymap.set("n", "<C-k>", "<C-W>k", { silent = true, desc = "Move window up" 
 vim.keymap.set("n", "<C-h>", "<C-W>h", { silent = true, desc = "Move window left" })
 vim.keymap.set("n", "<C-l>", "<C-W>l", { silent = true, desc = "Move window right" })
 
--- buffer quick jump
-vim.keymap.set("n", "<leader>l", ":b#<CR>", { silent = true, desc = "Jump to last buffer" })
+-- explorer
+vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "Explorer Ex" })
 
 -- jump to first non-blank character
 vim.keymap.set("n", "0", "^")

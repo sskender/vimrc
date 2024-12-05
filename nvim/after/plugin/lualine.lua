@@ -1,6 +1,6 @@
 local custom_gruvbox = require("lualine.themes.gruvbox")
 
-custom_gruvbox.normal.c.bg = '#282828'
+custom_gruvbox.normal.c.bg = "#282828"
 
 require("lualine").setup {
     sections = {
