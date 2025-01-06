@@ -1,6 +1,8 @@
 vim.opt.swapfile = false
 vim.opt.backup = false
 
+vim.opt.autoread = true
+
 vim.opt.lazyredraw = true
 
 vim.opt.clipboard = "unnamedplus"
