@@ -10,7 +10,11 @@ return {
 
     { "HiPhish/rainbow-delimiters.nvim" },
 
-    { "ellisonleao/gruvbox.nvim" },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+    },
 
     {
         "nvim-lualine/lualine.nvim",
