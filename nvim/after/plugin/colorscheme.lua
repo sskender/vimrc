@@ -1,6 +1,7 @@
 require("gruvbox").setup({
+    contrast = "hard",
     overrides = {
-        SignColumn = { bg = "#282828" }
+        SignColumn = { bg = "#1d2021" }
     }
 })
 
